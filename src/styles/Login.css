@@ -1,0 +1,59 @@
+:root {
+  --bgColor: #fff;
+  --bgColor1: #dcdcdc;
+  --bgColor2: #343a40;
+  --textColor: black;
+  --primary: #f0dcc0;
+  --primary1: #ebd0ab;
+  --primary2: #e6c596;
+  --secondary: #4aa9f7;
+  --secondary1: #c1c1c1;
+  --secondary2: #ececec;
+  --secondary3: #de9a99;
+}
+
+form .btn {
+  background-color: var(--secondary);
+}
+
+form a {
+  color: var(--secondary);
+}
+.form .form-control {
+  border: 2px solid var(--textColor);
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 97vh;
+
+  && h3 {
+    text-align: center;
+    font-weight: 700;
+  }
+}
+
+.form {
+  width: 27rem;
+  border: 0.6rem solid var(--secondary1);
+  border-radius: 8px;
+  background-color: var(--secondary2);
+  box-shadow: 1px 4px 10px var(--bgColor2);
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 8rem;
+  margin-bottom: 1rem;
+  background-color: var(--primary);
+}
+
+.logo img {
+  width: 18rem;
+}
