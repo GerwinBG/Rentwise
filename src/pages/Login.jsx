@@ -1,23 +1,11 @@
 import React from "react";
-// import { useState } from "react";
 import "../styles/Login.css";
-import { Link } from "react-router-dom";
+
 import logo from "../images/RentWise.png";
 
 
 const Login = () => {
-  // const [username, setUsername] = useState("");
-  // const [password, setPassword] = useState("");
-  // const [authenticated, setAuthenticated] = useState(localStorage.getItem(localStorage.getItem("authenticated") || false));
-  // const users = [{ username: "username", password: "password" }];
-  // const handleSubmit = (e) => {
-  //   e.preventDefault()
-  //   const account = users.find((user) => user.username === username);
-  //   if (account && account.password === password) {
-  //     setAuthenticated(true)
-  //     localStorage.setItem("authenticated", true);
-  //   }
-  // }
+
 
   return (
     <div className="login" >
@@ -42,10 +30,10 @@ const Login = () => {
             </label>
           </div>
           <div className="d-grid mb-2">
-            <button className="btn signinBtn">Sign in</button>
+            <button className="btn signinBtn"><a>Sign in</a></button>
           </div>
-          <Link to="/signup" className="d-flex justify-content-end mb-2">Forgot password</Link>
-          <Link to="/signup" className="d-flex justify-content-end mb-2">Register here</Link>
+          <a className="d-flex justify-content-end mb-2">Forgot password</a>
+          <a className="d-flex justify-content-end mb-2">Register here</a>
         </form>
       </div>
     </div >

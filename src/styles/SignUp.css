@@ -76,6 +76,10 @@
   background-color: var(--secondary);
   width: 20rem;
 }
+.btnSignup .signupBtn a {
+  text-decoration: none;
+  color: var(--textColor);
+}
 
 .btnSignup .signupBtn:hover {
   background-color: var(--btnColor);

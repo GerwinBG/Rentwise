@@ -1,17 +1,24 @@
 import React from 'react'
-import "../styles/Dashboard.css";
-import 'bootstrap-icons/font/bootstrap-icons.css';
-import Sidebar from '../components/Sidebar';
-
-
+import '../styles/Dashboard.css'
 
 
 function Dashboard() {
   return (
-    <div className='dashboard d-flex'>
-      <section className='w-auto'>
-        <Sidebar />
-      </section>
+    <div className='dashboard'>
+      <div className='dashContent container my-5 rounded'>
+        <h1>Welcome Owner</h1>
+        <hr class />
+        <div className='dashCards'>
+          <div className='apartmentsQty border shadow rounded'>
+            <h1>TAngina</h1>
+          </div>
+          <div className='tenantsQty border shadow rounded'>
+            <h1>TAngina</h1>
+          </div>
+        </div>
+
+      </div>
+
     </div>
   )
 }

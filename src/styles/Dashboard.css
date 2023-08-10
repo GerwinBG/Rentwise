@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@400;600&family=Josefin+Sans:wght@300&family=Kanit:wght@500&family=Montserrat&family=Open+Sans&family=Poppins&family=Roboto&family=Roboto+Flex&family=Roboto+Slab&family=Signika:wght@500&display=swap");
-
 :root {
   --bgColor: #fff;
   --bgColor1: #dcdcdc;
@@ -12,6 +11,7 @@
   --secondary1: #c1c1c1;
   --secondary2: #ececec;
   --secondary3: #de9a99;
+  --btnColor: #3b88c6;
 }
 * {
   margin: 0;
@@ -20,7 +20,32 @@
 }
 
 .dashboard {
-  height: 100vh;
-  margin: 0 3rem;
+  width: auto;
+  height: auto;
   background-color: var(--bgColor1);
+}
+
+.dashContent {
+  border: 1px solid var(--bgColor);
+  background-color: var(--bgColor);
+  height: 70vh;
+}
+
+.apartmentsQty,
+.tenantsQty {
+  width: 30rem;
+  height: 20rem;
+  border: 1px solid var(--primary1);
+}
+.dashCards {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.apartmentsQty {
+  background-color: var(--primary1);
+}
+
+.tenantsQty {
+  background-color: var(--primary2);
 }

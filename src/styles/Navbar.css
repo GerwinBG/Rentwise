@@ -4,6 +4,7 @@
   --bgColor: #fff;
   --bgColor1: #dcdcdc;
   --bgColor2: #343a40;
+  --bgColo3: #212529;
   --textColor: black;
   --primary: #f0dcc0;
   --primary1: #ebd0ab;
@@ -20,7 +21,7 @@
 }
 
 nav {
-  background-color: var(--primary);
+  background-color: var(--bgColor2);
 }
 
 ul li .manageAccnt i {

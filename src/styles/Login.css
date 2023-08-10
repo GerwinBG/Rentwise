@@ -23,6 +23,12 @@ form .signinBtn {
   background-color: var(--secondary);
 }
 form .signinBtn:hover {
+  background-color: var(--btnColor);
+}
+
+.signinBtn a {
+  text-decoration: none;
+  color: var(--textColor);
 }
 
 form a {
