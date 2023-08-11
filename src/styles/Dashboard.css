@@ -20,15 +20,14 @@
 }
 
 .dashboard {
-  width: auto;
-  height: auto;
-  background-color: var(--bgColor1);
+  width: 100%;
+  height: 100%;
 }
 
 .dashContent {
   border: 1px solid var(--bgColor);
-  background-color: var(--bgColor);
-  height: 70vh;
+  background-color: var(--bgColor1);
+  height: auto;
 }
 
 .apartmentsQty,
@@ -36,11 +35,32 @@
   width: 30rem;
   height: 20rem;
   border: 1px solid var(--primary1);
+  margin: 2rem;
 }
 .dashCards {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+@media (max-width: 768px) {
+  .dashCards {
+    flex-direction: column;
+    padding-bottom: 2rem;
+  }
+
+  .apartmentsQty,
+  .tenantsQty {
+    width: 95%;
+    height: 15rem;
+
+    && h4 {
+      font-size: 100%;
+    }
+  }
+}
+
+.navbar-brand i {
+  font-size: 1.7rem;
 }
 .apartmentsQty {
   background-color: var(--primary1);
@@ -48,4 +68,28 @@
 
 .tenantsQty {
   background-color: var(--primary2);
+}
+
+.apartmentsQty i {
+  font-size: 4rem;
+  color: var(--bgColor);
+}
+.apartmentsQty .btn {
+  background-color: var(--bgColor);
+  width: 8rem;
+}
+
+.apartmentsQty .btn:hover,
+.tenantsQty .btn:hover {
+  background-color: var(--bgColor1);
+  border: 1px solid black;
+}
+
+.tenantsQty i {
+  font-size: 4rem;
+  color: var(--secondary3);
+}
+.tenantsQty .btn {
+  background-color: var(--bgColor);
+  width: 8rem;
 }

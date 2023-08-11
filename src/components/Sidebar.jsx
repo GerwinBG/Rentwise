@@ -11,7 +11,7 @@ function Sidebar() {
 
 
   return (
-    <div className='sideBar d-flex justify-content-start flex-column text-white py-3 ps-4 pe-4 vh-100'>
+    <div className='sideBar d-flex justify-content-start flex-column text-white py-3 ps-4 pe-4'>
       <div className='webLogo'>
         <span className="brand p-3">
           <img src={logo} alt="Bootstrap" />

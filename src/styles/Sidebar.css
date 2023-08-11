@@ -20,6 +20,7 @@
 }
 .sideBar {
   background-color: var(--bgColor2);
+  height: 100%;
 }
 
 .nav li {
