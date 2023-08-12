@@ -29,7 +29,7 @@
 }
 
 .signupContainer {
-  width: 50rem;
+  width: 40rem;
   border: 0.6rem solid var(--secondary1);
   border-radius: 8px;
   background-color: var(--secondary2);
@@ -50,26 +50,6 @@
 
 .signupForm .form-control {
   border: 1px solid var(--textColor);
-}
-
-.signupForm {
-  display: flex;
-  justify-content: space-between;
-}
-.innerLeft,
-.innerRight {
-  width: 45%;
-}
-
-@media (max-width: 768px) {
-  .signupForm {
-    flex-direction: column;
-  }
-
-  .innerLeft,
-  .innerRight {
-    width: auto;
-  }
 }
 
 .btnSignup .signupBtn {

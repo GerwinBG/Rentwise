@@ -13,36 +13,25 @@ const SignUp = () => {
         <h3>SIGN UP</h3>
 
         <form className="signupForm p-4">
-          <div className="innerLeft">
-            <div className="mb-2">
-              <label htmlFor="firstName">First Name</label>
-              <input type="firstName" className="form-control" />
-            </div>
-            <div className="mb-2">
-              <label htmlFor="lastName">Last Name</label>
-              <input type="lastName" className="form-control" />
-            </div>
-
-            <div className="mb-2">
-              <label htmlFor="email">Email</label>
-              <input type="email" className="form-control" />
-            </div>
+          <div className="mb-2">
+            <label htmlFor="firstName">Full Name</label>
+            <input type="firstName" className="form-control" />
           </div>
-          <div className="innerRight">
-            <div className="mb-2">
-              <label htmlFor="username">Username</label>
-              <input type="username" className="form-control" />
-            </div>
-            <div className="mb-2">
-              <label htmlFor="password">Password</label>
-              <input type="password" className="form-control" />
-            </div>
-            <div className="mb-2">
-              <label htmlFor="contact">Contact No.</label>
-              <input type="contact" className="form-control" />
-            </div>
-
-
+          <div className="mb-2">
+            <label htmlFor="username">Username</label>
+            <input type="username" className="form-control" />
+          </div>
+          <div className="mb-2">
+            <label htmlFor="password">Password</label>
+            <input type="password" className="form-control" />
+          </div>
+          <div className="mb-2">
+            <label htmlFor="email">Email</label>
+            <input type="email" className="form-control" />
+          </div>
+          <div className="mb-2">
+            <label htmlFor="contact">Contact No.</label>
+            <input type="contact" className="form-control" />
           </div>
         </form>
 

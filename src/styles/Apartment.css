@@ -19,7 +19,18 @@
   box-sizing: border-box;
 }
 
-.apartment {
+.apartments {
   width: 100%;
-  height: 100%;
+  height: 89.8vh;
+}
+
+.apartmentList {
+  width: 100%;
+  height: 32rem;
+  border: 5px solid var(--bgColor1);
+  background-color: var(--bgColor1);
+}
+.headerNav {
+  background-color: var(--primary2);
+  padding: 1rem 1rem;
 }

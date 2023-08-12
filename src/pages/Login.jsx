@@ -32,7 +32,6 @@ const Login = () => {
           <div className="d-grid mb-2">
             <button className="btn signinBtn"><a>Sign in</a></button>
           </div>
-          <a className="d-flex justify-content-end mb-2">Forgot password</a>
           <a className="d-flex justify-content-end mb-2">Register here</a>
         </form>
       </div>

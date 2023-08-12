@@ -22,8 +22,19 @@
 
 nav {
   background-color: var(--bgColor2);
+  height: 5rem;
 }
 
 ul li .manageAccnt i {
   font-size: 1.5rem;
+}
+
+nav img {
+  width: 11rem;
+  height: 4rem;
+  background-color: var(--primary);
+}
+
+.navBtn .btn {
+  background-color: var(--secondary);
 }

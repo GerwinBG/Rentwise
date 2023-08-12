@@ -1,8 +1,5 @@
-import React, { useState } from "react"
+import React from "react"
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import Sidebar from "./components/Sidebar";
-import Navbar from "./components/Navbar";
-import Dashboard from "./pages/Dashboard";
 import Tenants from "./pages/Tenants";
 import Apartments from "./pages/Apartments";
 import Login from "./pages/Login";

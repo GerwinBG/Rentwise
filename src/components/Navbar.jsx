@@ -1,31 +1,49 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "../styles/Navbar.css";
+import logo from "../images/RentWise.png";
+import Sidebar from './Sidebar';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+import { OffcanvasBody } from 'react-bootstrap/esm';
 
 
 
-function Navbar({ Toggle }) {
+
+function Navbar() {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
-      <div className="container-fluid">
-        <a className="navbar-brand d-block" onClick={Toggle}>
-          <i class="bi bi-caret-right-fill text-white"></i>
-        </a>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li className="nav-item mx-3 border rounded">
-              <a className="nav-link text-white fs-5" aria-current="page" href="#"><i className="bi bi-person-fill-gear fs-5 me-1"></i>Account</a>
-            </li>
-            <li className="nav-item mx-3 border rounded">
-              <a className="nav-link text-white fs-5" aria-current="page" href="#"><i className="bi bi-door-open-fill fs-5 me-1"></i>Logout</a>
-            </li>
-          </ul>
 
-        </div>
+    <nav className="d-flex justify-content-between">
+      <div className='d-lg-none d-flex align-items-center ms-3 '>
+        <button className='btn'> <i class="bi bi-caret-right-square-fill fs-2 text-white" onClick={handleShow}></i></button>
       </div>
-    </nav>
+      <Offcanvas show={show} onHide={handleClose}>
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>
+            <img src={logo} style={{ width: "12rem", backgroundColor: "#f0dcc0" }} />
+          </Offcanvas.Title>
+        </Offcanvas.Header>
+        <OffcanvasBody>
+          <Sidebar />
+        </OffcanvasBody>
+      </Offcanvas>
+      <div className='d-none d-lg-block mx-5'>
+        <img src={logo} alt="" />
+      </div>
+
+      <div className='navBtn d-flex align-items-center'>
+        <button className='btn btn-primary mx-3 fs-4'><i class="bi bi-person-fill-gear fs-4 me-2"></i>Profile</button>
+        <button className='btn btn-primary mx-3 fs-4'><i class="bi bi-door-open-fill fs-4 me-2"></i>Logout</button>
+      </div>
+
+    </nav >
+
+
+
+
+
   )
 }
 
