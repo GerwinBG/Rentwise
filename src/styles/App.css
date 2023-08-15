@@ -20,14 +20,18 @@
   font-family: "Poppins", sans-serif;
 }
 
-.sidebar {
-  background-color: var(--bgColor2);
+@media (max-width: 540px) {
+  * {
+    font-size: 50%;
+  }
 }
-/* .content {
-  width: 100vw;
-  height: 100vh;
-} */
+
 .content .contentWrap {
   height: 100%;
   background-color: var(--bgColor1);
+}
+
+.pageRender {
+  height: 90vh;
+  overflow: scroll;
 }

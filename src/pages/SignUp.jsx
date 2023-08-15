@@ -38,7 +38,7 @@ const SignUp = () => {
         <div className="btnSignup d-flex justify-content-center">
           <button className="btn signupBtn"><Link to="#">Sign Up</Link></button>
         </div>
-        <p className="me-4 my-3">Already Registered? <Link to="#" >Sign in</Link></p>
+        <p className="me-4 my-3">Already Registered? <Link to="/login" >Sign in</Link></p>
       </div>
 
 

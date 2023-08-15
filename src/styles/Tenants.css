@@ -30,6 +30,6 @@
   padding: 1rem 1rem;
 }
 
-.tenantHeader .btn {
+.tenantHeader .tenantBtn {
   background-color: var(--secondary);
 }

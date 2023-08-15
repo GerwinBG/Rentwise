@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 function Dashboard() {
   return (
 
-    <div className='dashboard'>
+    <div className='dashboard overflow-auto'>
       <div className='dashContent'>
         <h1 className='m-4'>Welcome Owner</h1>
         <hr />

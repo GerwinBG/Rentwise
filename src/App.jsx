@@ -53,7 +53,7 @@ function App() {
                 <div className="d-none d-lg-block sidebar">
                   <Sidebar />
                 </div>
-                <div className="d-flex justify-content-center align-items-center w-100 overflow-auto">
+                <div className="pageRender d-flex justify-content-center align-items-center w-100 overflow-auto">
                   <Tenants />
                 </div>
               </div>

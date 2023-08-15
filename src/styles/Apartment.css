@@ -36,7 +36,7 @@
   padding: 1rem 1rem;
 }
 
-.apartmentHeader .btn {
+.apartmentHeader .apartmentBtn {
   background-color: var(--secondary);
 }
 

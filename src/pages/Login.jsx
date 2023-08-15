@@ -2,10 +2,10 @@ import React from "react";
 import "../styles/Login.css";
 
 import logo from "../images/RentWise.png";
+import { Link } from "react-router-dom";
 
 
 const Login = () => {
-
 
   return (
     <div className="login" >
@@ -32,7 +32,7 @@ const Login = () => {
           <div className="d-grid mb-2">
             <button className="btn signinBtn"><a>Sign in</a></button>
           </div>
-          <a className="d-flex justify-content-end mb-2">Register here</a>
+          <Link className="d-flex justify-content-end mb-2" to="/signup">Register here</Link>
         </form>
       </div>
     </div >
