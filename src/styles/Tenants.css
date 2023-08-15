@@ -4,8 +4,8 @@
   --bgColor1: #dcdcdc;
   --bgColor2: #343a40;
   --textColor: black;
-  --primary: #f0dcc0;
-  --primary1: #ebd0ab;
+  --primary: #e8ca9e;
+  --primary1: #e7c79a;
   --primary2: #e6c596;
   --secondary: #4aa9f7;
   --secondary1: #c1c1c1;
@@ -17,10 +17,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 .tenants {
   width: 100%;
   height: 100%;
   background-color: var(--bgColor1);
+}
+.tenantHeader {
+  background-color: var(--primary1);
+  padding: 1rem 1rem;
+}
+
+.tenantHeader .btn {
+  background-color: var(--secondary);
 }

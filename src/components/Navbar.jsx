@@ -17,13 +17,15 @@ function Navbar() {
 
     <nav className="d-flex justify-content-between">
       <div className='d-lg-none d-flex align-items-center ms-3 '>
-        <button className='btn'> <i class="bi bi-caret-right-square-fill fs-2 text-white" onClick={handleShow}></i></button>
+        <button className='btn'> <i className="bi bi-caret-right-square-fill fs-2 text-white" onClick={handleShow}></i></button>
       </div>
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>
-            <img src={logo} style={{ width: "12rem", backgroundColor: "#f0dcc0" }} />
-          </Offcanvas.Title>
+          <div className='d-flex justify-content-center'>
+            <Offcanvas.Title>
+              <img src={logo} style={{ width: "12rem", backgroundColor: "#f0dcc0", marginLeft: "1rem" }} />
+            </Offcanvas.Title>
+          </div>
         </Offcanvas.Header>
         <OffcanvasBody>
           <Sidebar />
@@ -34,8 +36,8 @@ function Navbar() {
       </div>
 
       <div className='navBtn d-flex align-items-center'>
-        <button className='btn btn-primary mx-3 fs-4'><i class="bi bi-person-fill-gear fs-4 me-2"></i>Profile</button>
-        <button className='btn btn-primary mx-3 fs-4'><i class="bi bi-door-open-fill fs-4 me-2"></i>Logout</button>
+        <button className='btn btn-primary mx-3 fs-4'><i className="bi bi-person-fill-gear fs-4 me-2"></i>Profile</button>
+        <button className='btn btn-primary mx-3 fs-4'><i className="bi bi-door-open-fill fs-4 me-2"></i>Logout</button>
       </div>
 
     </nav >

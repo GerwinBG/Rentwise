@@ -5,44 +5,56 @@
   --bgColor1: #dcdcdc;
   --bgColor2: #343a40;
   --textColor: black;
-  --primary: #f0dcc0;
-  --primary1: #ebd0ab;
+  --primary: #e8ca9e;
+  --primary1: #e7c79a;
   --primary2: #e6c596;
   --secondary: #4aa9f7;
   --secondary1: #c1c1c1;
   --secondary2: #ececec;
   --secondary3: #de9a99;
+  --btnColor: #3b88c6;
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
+
 .sideBar {
-  background-color: var(--bgColor2);
-  width: 22rem;
-  height: 100%;
+  width: 18rem;
+  height: 88.7vh;
 }
 
 .nav li {
   cursor: pointer;
 }
 
-.nav-item a {
-  text-decoration: none;
+ul a {
   color: var(--bgColor);
-  cursor: pointer;
+
+  && i {
+    color: var(--secondary3);
+  }
 }
 
 .nav a:hover {
-  background-color: rgb(117, 117, 117);
+  background-color: var(--primary1);
   border-radius: 5px;
+  && i,
+  span {
+    color: var(--bgColor2);
+  }
 }
 
 .active {
-  background-color: rgb(117, 117, 117);
+  background-color: var(--primary1);
   border-radius: 5px;
-  color: var(--bgColor);
+  color: var(--bgColor2);
+
+  && i {
+    color: var(--bgColor2);
+  }
 }
 
 .brand img {
