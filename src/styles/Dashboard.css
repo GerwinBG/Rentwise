@@ -24,7 +24,6 @@
   display: flex;
   justify-content: center;
   background-color: var(--bgColor1);
-  overflow: scroll !important;
   width: 100%;
   height: 100%;
 }
@@ -46,6 +45,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  height: auto;
 }
 @media (max-width: 760px) {
   .apartmentsQty,

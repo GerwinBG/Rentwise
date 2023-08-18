@@ -25,7 +25,7 @@ function App() {
                   <div className="d-none d-lg-block sidebar">
                     <Sidebar />
                   </div>
-                  <div className="d-flex justify-content-center align-items-center w-100">
+                  <div className="d-flex justify-content-center align-items-center w-100 overflow-auto mt-4">
                     <Dashboard />
                   </div>
 
@@ -41,10 +41,9 @@ function App() {
                     <div className="d-none d-lg-block sidebar">
                       <Sidebar />
                     </div>
-                    <div className="d-flex justify-content-center align-items-center w-100 overflow-auto">
+                    <div className="pageRender d-flex justify-content-center align-items-center w-100 overflow-auto mt-4">
                       <Apartments />
                     </div>
-
                   </div>
                 </div>
               </>
@@ -57,7 +56,7 @@ function App() {
                     <div className="d-none d-lg-block sidebar">
                       <Sidebar />
                     </div>
-                    <div className="pageRender d-flex justify-content-center align-items-center w-100 overflow-auto">
+                    <div className="pageRender d-flex justify-content-center align-items-center w-100 overflow-auto mt-4">
                       <Tenants />
                     </div>
                   </div>

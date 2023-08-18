@@ -9,7 +9,7 @@ function Apartments() {
       <div className='apartmentPageContainer d-flex flex-column p-3'>
         <div className='apartmentHeader d-flex justify-content-between'>
           <h3>Apartment List</h3>
-          <button className='apartmentBtn btn text-white btn-primary' data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-plus-lg"></i>New Apartment</button>
+          <button className='apartmentBtn btn text-white btn-primary' data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i className="bi bi-plus-lg"></i>New Apartment</button>
           <ApartmentModal />
         </div>
         <div className="apartmentList d-flex flex-column">
@@ -26,18 +26,17 @@ function Apartments() {
               </thead>
               <tbody className='text-center'>
                 <tr>
-                  <th scope="row" ></th>
+                  <th scope="row"></th>
                   <td></td>
                   <td colSpan={5}></td>
                   <td></td>
                   <td colSpan={2}>
                     <div className='d-flex justify-content-center'>
-                      <button type="button" class="btn btn-outline-primary mx-2">Edit</button>
-                      <button type="button" class="btn btn-outline-danger mx-2">Delete</button>
+                      <button type="button" className="btn btn-outline-primary mx-2">Edit</button>
+                      <button type="button" className="btn btn-outline-danger mx-2">Delete</button>
                     </div>
                   </td>
                 </tr>
-
               </tbody>
             </table>
           </div>

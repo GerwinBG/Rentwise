@@ -11,7 +11,7 @@ function Tenants() {
       <div className='apartmentPageContainer d-flex flex-column p-3'>
         <div className='tenantHeader d-flex justify-content-between'>
           <h3>Tenant List</h3>
-          <button className='tenantBtn btn text-white btn-primary' data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-plus-lg"></i>New Tenant</button>
+          <button className='tenantBtn btn text-white btn-primary' data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i className="bi bi-plus-lg"></i>New Tenant</button>
           <TenantModal />
         </div>
         <div className="apartmentList d-flex flex-column">
@@ -30,7 +30,7 @@ function Tenants() {
               </thead>
               <tbody className='text-center'>
                 <tr >
-                  <th scope="row">1</th>
+                  <th scope="row"></th>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -38,8 +38,8 @@ function Tenants() {
                   <td></td>
                   <td colSpan={2}>
                     <div className='d-flex justify-content-center'>
-                      <button class="btn btn-outline-primary mx-2">Edit</button>
-                      <button class="btn btn-outline-danger mx-2">Delete</button>
+                      <button className="btn btn-outline-primary mx-2">Edit</button>
+                      <button className="btn btn-outline-danger mx-2">Delete</button>
                     </div>
                   </td>
                 </tr>
