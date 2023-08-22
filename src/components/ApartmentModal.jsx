@@ -1,15 +1,26 @@
+import axios from 'axios';
 import { useFormik } from 'formik'
 import React from 'react'
 
 function ApartmentModal() {
   const formik = useFormik({
     initialValues: {
+      ownerId: 1,
       unit: '',
       description: '',
       price: '',
     },
-    onSubmit: (value) => {
-      console.log(value);
+    onSubmit: async (values) => {
+      try {
+        const res = await axios.post('http://localhost:8000/api/v1/apartments?ownerId=1', values);
+        console.log('Apartment created successfully', res.data);
+      } catch (error) {
+        if (error.response) {
+          console.error('Apartment creation failed', error.response.data);
+        } else {
+          console.error('Apartment creation failed', error.message);
+        }
+      }
     }
 
   })

@@ -1,11 +1,35 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import '../styles/Apartment.css';
 import ApartmentModal from '../components/ApartmentModal';
+import { useDispatch, useSelector } from 'react-redux';
+import axios from 'axios';
+import { setDataTabs } from '../store/dataTabReducer';
+import ApartmentData from '../components/ApartmentData';
 
 function Apartments() {
+  const dispatch = useDispatch();
+  const dataTabs = useSelector(state => state.dataTabs);
+
+
+  const fetchDatas = async () => {
+    try {
+      const res = await axios.get('http://localhost:8000/api/v1/apartments?userId=1&tenants');
+      dispatch(setDataTabs(res.data.data));
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchDatas()
+  }, []);
+
+
+  const dataTabsArray = Array.isArray(dataTabs) ? dataTabs : [];
+
   return (
 
-    <div className='apartmentContent overflow-auto'>
+    <div className='apartmentContent overflow-auto' >
       <div className='apartmentPageContainer d-flex flex-column p-3'>
         <div className='apartmentHeader d-flex justify-content-between'>
           <h3>Apartment List</h3>
@@ -25,24 +49,23 @@ function Apartments() {
                 </tr>
               </thead>
               <tbody className='text-center'>
-                <tr>
-                  <th scope="row"></th>
-                  <td></td>
-                  <td colSpan={5}></td>
-                  <td></td>
-                  <td colSpan={2}>
-                    <div className='d-flex justify-content-center'>
-                      <button type="button" className="btn btn-outline-primary mx-2">Edit</button>
-                      <button type="button" className="btn btn-outline-danger mx-2">Delete</button>
-                    </div>
-                  </td>
-                </tr>
+                {
+                  dataTabsArray.map(dataTab => (
+                    <ApartmentData
+                      key={dataTab.id}
+                      id={dataTab.id}
+                      unit={dataTab.unit}
+                      description={dataTab.description}
+                      price={dataTab.price}
+                    />
+                  ))
+                }
               </tbody>
             </table>
           </div>
         </div>
       </div>
-    </div>
+    </div >
 
 
   )

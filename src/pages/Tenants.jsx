@@ -1,9 +1,30 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../styles/Tenants.css'
 import TenantModal from '../components/TenantModal'
+import { useDispatch, useSelector } from 'react-redux'
+import { setDataTabs } from '../store/dataTabReducer';
+import axios from 'axios';
+import TenantData from '../components/TenantData';
 
 
 function Tenants() {
+  const dispatch = useDispatch();
+  const dataTabs = useSelector(state => state.dataTabs)
+
+  const fetchDatas = async () => {
+    try {
+      const res = await axios.get('http://localhost:8000/api/v1/apartments?userId=1&tenants');
+      dispatch(setDataTabs(res.data.data));
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchDatas()
+  }, []);
+
+  const dataTabsArray = Array.isArray(dataTabs) ? dataTabs : [];
 
   return (
 
@@ -23,26 +44,31 @@ function Tenants() {
                   <th scope="col">Name</th>
                   <th scope="col">Email</th>
                   <th scope="col">Contact</th>
-                  <th>Occupants Qty.</th>
-                  <th scope="col">Apartment Unit</th>
-                  <th colSpan={2}>Action</th>
+                  <th scope="col" colSpan={3}>Occupants Qty.</th>
+                  <th scope="col" colSpan={3}>Apartment Unit</th>
+                  <th scope="col">Start date</th>
+                  <th scope='col' colSpan={2}>Action</th>
                 </tr>
               </thead>
               <tbody className='text-center'>
-                <tr >
-                  <th scope="row"></th>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td colSpan={2}>
-                    <div className='d-flex justify-content-center'>
-                      <button className="btn btn-outline-primary mx-2">Edit</button>
-                      <button className="btn btn-outline-danger mx-2">Delete</button>
-                    </div>
-                  </td>
-                </tr>
+                {
+                  dataTabsArray.map(dataTab => (
+                    // Check if dataTab.tenant exists before accessing its properties
+                    dataTab.tenant && (
+                      <TenantData
+                        key={dataTab.tenant.id}
+                        id={dataTab.tenant.id}
+                        name={dataTab.tenant.name}
+                        email={dataTab.tenant.email}
+                        contact={dataTab.tenant.contact}
+                        occupantQty={dataTab.tenant.occupantsQty}
+                        apartmentUnit={dataTab.unit}
+                        startDate={dataTab.tenant.startDate}
+                      />
+                    )
+                  ))
+                }
+
               </tbody>
             </table>
           </div>
