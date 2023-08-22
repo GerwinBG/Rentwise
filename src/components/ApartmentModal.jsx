@@ -12,7 +12,7 @@ function ApartmentModal() {
     },
     onSubmit: async (values) => {
       try {
-        const res = await axios.post('http://localhost:8000/api/v1/apartments?ownerId=1', values);
+        const res = await axios.post('http://localhost:8000/api/v1/apartments?userId=2', values);
         console.log('Apartment created successfully', res.data);
       } catch (error) {
         if (error.response) {

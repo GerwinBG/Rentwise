@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 
 
-function Sidebar(handleClose) {
+function Sidebar() {
 
   return (
 
@@ -14,19 +14,19 @@ function Sidebar(handleClose) {
       <hr className='text-secondary' />
       <ul className='nav nav-pills flex-column mt-2' >
         <NavLink to="/" className='my-1 p-2 text-decoration-none' >
-          <li className='nav-item py-1' onClick={handleClose}>
+          <li className='nav-item py-1'>
             <i className='bi bi-speedometer2 me-3 fs-4'></i>
             <span className='fs-4'><strong>Dashboard</strong></span>
           </li>
         </NavLink>
         <NavLink to="/apartments" className='my-1 p-2 text-decoration-none' >
-          <li className='nav-item py-1' onClick={handleClose}>
+          <li className='nav-item py-1' >
             <i className='bi bi-house-door me-3 fs-4'></i>
             <span className='fs-4'><strong>Apartments</strong></span>
           </li>
         </NavLink>
         <NavLink to="/tenants" className='my-1 p-2 text-decoration-none' >
-          <li className='nav-item py-1' onClick={handleClose}>
+          <li className='nav-item py-1' >
             <i className='bi bi-person-square me-3 fs-4'></i>
             <span className='fs-4'><strong>Tenants</strong></span>
           </li>

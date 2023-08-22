@@ -13,7 +13,7 @@ function Tenants() {
 
   const fetchDatas = async () => {
     try {
-      const res = await axios.get('http://localhost:8000/api/v1/apartments?userId=1&tenants');
+      const res = await axios.get('http://localhost:8000/api/v1/apartments?userId=2&tenants');
       dispatch(setDataTabs(res.data.data));
     } catch (error) {
       console.error('Error fetching data:', error);
