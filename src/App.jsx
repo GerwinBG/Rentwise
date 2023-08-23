@@ -11,6 +11,7 @@ import Dashboard from "./pages/Dashboard";
 import './styles/App.css';
 import { Provider } from "react-redux";
 import store from "./store/store";
+import Protected from "./components/Protected";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Provider store={store}>
         <BrowserRouter>
           <Routes>
+
             <Route path="/" element={
               <div className="content">
                 <Navbar />
@@ -63,6 +65,7 @@ function App() {
                 </div>
               </>
             } />
+
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
           </Routes>

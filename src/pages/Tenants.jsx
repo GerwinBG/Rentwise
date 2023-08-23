@@ -9,11 +9,14 @@ import TenantData from '../components/TenantData';
 
 function Tenants() {
   const dispatch = useDispatch();
-  const dataTabs = useSelector(state => state.dataTabs)
+  const dataTabs = useSelector(state => state.dataTabs);
+  const loggedInUser = useSelector(state => state.loggedInUser);
 
   const fetchDatas = async () => {
+
     try {
-      const res = await axios.get('http://localhost:8000/api/v1/apartments?userId=2&tenants');
+      const userId = loggedInUser.id;
+      const res = await axios.get(`http://localhost:8000/api/v1/apartments?userId=${userId}&tenants`);
       dispatch(setDataTabs(res.data.data));
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -53,7 +56,6 @@ function Tenants() {
               <tbody className='text-center'>
                 {
                   dataTabsArray.map(dataTab => (
-                    // Check if dataTab.tenant exists before accessing its properties
                     dataTab.tenant && (
                       <TenantData
                         key={dataTab.tenant.id}

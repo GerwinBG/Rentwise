@@ -1,18 +1,26 @@
 import axios from 'axios';
 import { useFormik } from 'formik'
 import React from 'react'
+import { useSelector } from 'react-redux';
 
 function ApartmentModal() {
+  const loggedInUser = useSelector(state => state.loggedInUser);
+
   const formik = useFormik({
     initialValues: {
-      ownerId: 1,
       unit: '',
       description: '',
       price: '',
     },
     onSubmit: async (values) => {
       try {
-        const res = await axios.post('http://localhost:8000/api/v1/apartments?userId=2', values);
+        const token = loggedInUser.token;
+        const config = {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        };
+        const res = await axios.post('http://localhost:8000/api/v1/apartments', values, config);
         console.log('Apartment created successfully', res.data);
       } catch (error) {
         if (error.response) {
@@ -36,7 +44,7 @@ function ApartmentModal() {
           <div className="modal-body">
             <form onSubmit={formik.handleSubmit}>
               <div className='my-3'>
-                <label htmlFor="title" className='form-label'>Apartment Unit Code</label>
+                <label htmlFor="unit" className='form-label'>Apartment Unit Code</label>
                 <input type="text"
                   className="form-control"
                   id='unit'

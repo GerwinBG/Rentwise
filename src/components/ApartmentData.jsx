@@ -5,8 +5,8 @@ function apartmentData(props) {
   return (
     <>
       <tr>
-        <th scope="row">{id}</th>
-        <td>{unit}</td>
+        <th scope="row" colSpan={3}>{id}</th>
+        <td colSpan={3}>{unit}</td>
         <td colSpan={5}>{description}</td>
         <td>{price}</td>
         <td colSpan={2}>

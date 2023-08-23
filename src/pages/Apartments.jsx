@@ -9,11 +9,12 @@ import ApartmentData from '../components/ApartmentData';
 function Apartments() {
   const dispatch = useDispatch();
   const dataTabs = useSelector(state => state.dataTabs);
-
+  const loggedInUser = useSelector(state => state.loggedInUser);
 
   const fetchDatas = async () => {
     try {
-      const res = await axios.get('http://localhost:8000/api/v1/apartments?userId=2&tenants');
+      const userId = loggedInUser.id;
+      const res = await axios.get(`http://localhost:8000/api/v1/apartments?userId=${userId}&tenants`);
       dispatch(setDataTabs(res.data.data));
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -41,8 +42,8 @@ function Apartments() {
             <table className="table  border-dark px-2 ">
               <thead className='text-center'>
                 <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Unit</th>
+                  <th scope="col" colSpan={3}>#</th>
+                  <th scope="col" colSpan={3}>Unit</th>
                   <th scope="col" colSpan={5}>Description</th>
                   <th scope="col">Price</th>
                   <th scope="col" colSpan={2}>Action</th>

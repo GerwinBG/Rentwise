@@ -2,20 +2,31 @@ import React, { useState } from 'react'
 import "../styles/Navbar.css";
 import logo from "../images/RentWise.png";
 import Sidebar from './Sidebar';
-import { Link } from 'react-router-dom';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { OffcanvasBody } from 'react-bootstrap/esm';
 import ProfileModal from '../components/ProfileModal';
+import { useDispatch, useSelector, } from 'react-redux';
+import { setUser } from '../store/loggedInUserReducer';
+import { Link } from 'react-router-dom';
+
+
 
 
 
 
 
 function Navbar() {
+  const dispatch = useDispatch();
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const logout = () => {
+    dispatch(setUser(null));
+  };
+
   return (
 
     <nav className="d-flex justify-content-between">
@@ -42,10 +53,7 @@ function Navbar() {
       <div className='navBtn d-flex align-items-center'>
         <button className='btn btn-primary mx-3 fs-4' data-bs-toggle="modal" data-bs-target="#profileModal"><i className="bi bi-person-fill-gear fs-4 me-2"></i>Profile</button>
         <ProfileModal />
-        <Link to="/login" >
-          <button className='btn btn-primary mx-3 fs-4'><i className="bi bi-door-open-fill fs-4 me-2"></i>Logout</button>
-        </Link>
-
+        <Link to="/login"><button className='btn btn-primary mx-3 fs-4' onClick={logout}><i className="bi bi-door-open-fill fs-4 me-2"></i>Logout</button></Link>
       </div>
 
     </nav >

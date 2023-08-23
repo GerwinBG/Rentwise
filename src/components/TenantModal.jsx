@@ -1,7 +1,10 @@
+import axios from 'axios';
 import { useFormik } from 'formik'
 import React from 'react'
+import { useSelector } from 'react-redux';
 
 function TenantModal() {
+  const loggedInUser = useSelector(state => state.loggedInUser);
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -10,8 +13,24 @@ function TenantModal() {
       occupantsQty: '',
       apartmentUnit: '',
     },
-    onSubmit: (value) => {
-      console.log(value);
+    onSubmit: async (values) => {
+      try {
+
+        const token = loggedInUser.token;
+        const config = {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        };
+        const res = await axios.post('http://localhost:8000/api/v1/tenants', values, config);
+        console.log('Tenant created successfully', res.data);
+      } catch (error) {
+        if (error.response) {
+          console.error('Tenant creation failed', error.response.data);
+        } else {
+          console.error('Tenant creation failed', error.message);
+        }
+      }
     }
   })
 
